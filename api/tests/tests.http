@@ -1,0 +1,41 @@
+@baseURL=http://localhost:3000
+@accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInVzZXJuYW1lIjoiQm9iIiwicm9sZSI6Im1lbWJlciIsImlhdCI6MTc1Mzg2NjI4MiwiZXhwIjoxNzUzODY5ODgyfQ.UsAQvBTJwmL3u0sAJNw95_jZ8V91aluNniTaBrByDIw
+
+### GET /lists
+GET {{baseURL}}/lists
+Authorization: Bearer {{accessToken}}
+
+### POST /lists
+POST {{baseURL}}/lists
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+  "title": "Nouvelle liste",
+  "position": 1
+}
+
+
+### POST /auth/register
+POST {{baseURL}}/auth/register
+Content-Type: application/json
+
+{
+  "username": "Fernand",
+  "password": "Passw0rd",
+  "confirm": "Passw0rd"
+}
+
+### POST /auth/login
+POST {{baseURL}}/auth/login
+Content-Type: application/json
+
+{
+  "username": "Bob",
+  "password": "Passw0rd"
+}
+
+### GET /auth/me
+GET {{baseURL}}/auth/me
+Authorization: Bearer {{accessToken}}
+
