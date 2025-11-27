@@ -1,9 +1,8 @@
-// créer une classe d'erreur personnalisée héritée de Error
 export class HttpError extends Error {
   constructor(message, statusCode) {
-    super(message); // on passe l'attribut message à la classe parente
-    this.name = "HttpError"; // nom d'erreur personnalisé (valeur statique)
-    this.statusCode = statusCode; // on définit l'attribut statusCode 
+    super(message); 
+    this.name = "HttpError"; 
+    this.statusCode = statusCode; 
   }
 }
 
