@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import { llmController } from "../controllers/index.js";
+import { llmController } from "../controllers/llm.controller.js";
 import { isAuthed } from "../middlewares/is-authed.middleware.js";
 
 export const llmRouter = Router();

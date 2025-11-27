@@ -1,6 +1,5 @@
 import { httpStatusCodes } from "../errors/http.errors.js";
 
-// Un handler de bienvenue pour l'API pour la route '/'
 export function getWelcomeResponse(_, res) {
   res
     .status(httpStatusCodes.OK)
