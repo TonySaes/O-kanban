@@ -9,7 +9,7 @@ export const httpRequester = {
 async function request(method, endpoint, body) {
   const accessToken = localStorage.getItem("token");
 
-  const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/${endpoint}`, {
+  const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}${endpoint}`, {
     method,
     headers: {
       ...(body && { "Content-Type": "application/json" }),

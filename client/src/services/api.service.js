@@ -12,6 +12,9 @@ export const api = {
   updateCard,
   updateCardsPosition,
 
+  getTranslation,
+  getCorrectedText,
+
   register,
   login,
 };
@@ -52,6 +55,14 @@ async function updateCard(cardId, cardData) {
 async function updateCardsPosition(list) {
   const promises = list.cards.map((card, index) => updateCard(card.id, { position: index + 1 }));
   await Promise.all(promises);
+}
+
+async function getTranslation(text, targetLanguage) {
+  return await httpRequester.post(`/translate`, { text, targetLanguage });
+}
+
+async function getCorrectedText(text) {
+  return await httpRequester.post(`/spellcheck`, { text });
 }
 
 async function register(signupData) {

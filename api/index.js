@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(xss());
 
 // Api router (avec préfixe et/ou version)
-app.use(/* "/api", */ apiRouter);
+app.use("/api", apiRouter);
 
 // Middlewares d'erreurs
 app.use(errorMiddleware);
