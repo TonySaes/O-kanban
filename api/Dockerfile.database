@@ -1,0 +1,6 @@
+FROM postgres:latest
+ENV POSTGRES_USER=okanban_user
+ENV POSTGRES_PASSWORD=okanban_password
+ENV POSTGRES_DB=okanban_db
+COPY ./data/01.create_tables.sql ./data/02.populate_tables.sql /docker-entrypoint-initdb.d/
+EXPOSE 5432
