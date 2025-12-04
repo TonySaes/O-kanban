@@ -20,7 +20,7 @@ VALUES
   (5, 2, 'Faire la vaisselle', NULL, 2),
   (6, 2, 'Faire la lessive', NULL, 2),
 
-  (7, 1, 'Maman : 17/07', '#0000FF', 3)
+  (7, 1, 'Maman : 17/07', '#0000FF', 3),
   (8, 2, 'Jerome : 24/05', NULL, 3)
 ;
 

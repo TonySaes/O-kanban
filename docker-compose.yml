@@ -8,6 +8,8 @@ services:
     depends_on:
       - db
     container_name: okanban-api
+    env_file:
+      - ./api/.api.docker.env
 
   client:
     build:
