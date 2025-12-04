@@ -1,47 +1,157 @@
-# Svelte + Vite
+# Frontend — O-kanban (Svelte 5)
 
-This template should help get you started developing with Svelte in Vite.
+Ce dossier contient la partie **Frontend** du projet **O-kanban**, une application Kanban développée en **Svelte 5** et construite avec **Vite**.
 
-## Recommended IDE Setup
+Ce projet communique avec l’API backend (Node.js / Express / PostgreSQL / Sequelize) située dans le dossier `api/` du même dépôt.
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+---
 
-## Need an official Svelte framework?
+## 🚀 Fonctionnalités du Frontend
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+- Interface Kanban responsive
+- Création, modification et suppression de tâches
+- Déplacement des tâches entre colonnes
+- Communication avec l'API backend via appels HTTP (REST)
+- Architecture composantielle avec **Svelte 5**
+- Build optimisé grâce à **Vite**
 
-## Technical considerations
+---
 
-**Why use this over SvelteKit?**
+## 🧱 Stack utilisée
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+| Domaine | Technologie |
+|--------|------------|
+| Framework Frontend | **Svelte 5** |
+| Outil de build | **Vite** |
+| Style | CSS natif |
+| Communication API | Fetch/store |
 
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+---
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+## 📂 Structure du dossier
 
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
+```txt
+client/
+├── public/            # Assets statiques
+├── src/
+│   ├── components/    # Composants UI
+│   ├── assets/        # CSS généraux
+│   ├── store/         # Gestion d’état 
+│   ├── services/      # services API
+│   └── main.js        # Point d'entrée de l'application
+├── index.html
+├── vite.config.js
+└── package.json
+```
 
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
+---
 
-**Why include `.vscode/extensions.json`?**
+## ⚙️ Pré-requis
 
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
+- **Node.js v18+** (LTS recommandé)
+- **npm** (ou yarn / pnpm si utilisé)
 
-**Why enable `checkJs` in the JS template?**
+---
 
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
+## 📦 Installation
 
-**Why is HMR not preserving my local component state?**
+Depuis la racine du projet :
 
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/sveltejs/svelte-hmr/tree/master/packages/svelte-hmr#preservation-of-local-state).
+```bash
+npm run install
+```
 
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
+Cette commande installe les dépendances du backend **et** du frontend.
+
+Si tu veux installer uniquement la partie front :
+
+```bash
+cd client
+npm install
+```
+
+---
+
+## ▶️ Lancer le projet (Développement)
+
+Depuis la racine :
+
+```bash
+npm run dev
+```
+
+Ou uniquement le front :
+
+```bash
+cd client
+npm run dev
+```
+
+Le front sera accessible sur :
+
+👉 **http://localhost:5173**
+
+---
+
+## 🏗️ Build Production
+
+Pour construire une version optimisée :
+
+```bash
+npm run build
+```
+
+Pour la prévisualiser localement :
+
+```bash
+npm run preview
+```
+
+---
+
+## 🔌 Connexion à l’API Backend
+
+L'application consomme l'API située dans le dossier `api/`.
+
+Selon ton organisation, l’URL peut être configurée via :
+
+```
+.env
+vite.config.js
+src/utils/api.js
+```
+
 
 ```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
+const API_BASE_URL = "http://localhost:3000/api";
 ```
+
+---
+
+## 📌 Scripts disponibles dans `client/package.json`
+
+| Script | Action |
+|--------|--------|
+| `npm run dev` | Démarre l’application en mode développement (Vite) |
+| `npm run build` | Génére les fichiers optimisés pour la production |
+| `npm run preview` | Sert en local la version buildée |
+
+---
+
+## 📌 Roadmap front
+
+- Intégration drag & drop natif
+- Gestion multi-boards
+- Mode sombre
+- Animations UI
+- Accessibilité (ARIA, navigation clavier)
+
+---
+
+## 👤 Auteur
+
+**Tony Saes**  
+🔗 GitHub : https://github.com/TonySaes
+
+---
+
