@@ -81,8 +81,15 @@ cp database.docker_copy.env.example .database.docker.env
 
 2. Lancer les services :
 
+- Construction des images Docker : 
+
 ```bash
-docker compose up --build
+docker compose build
+```
+- Démarrer les conteneurs (en mode *detached* à partir des images (les reconstruits si non existantes) : 
+
+```bash
+docker compose up -d
 ```
 
 3. Accéder au projet :
