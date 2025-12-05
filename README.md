@@ -87,10 +87,10 @@ docker compose up --build
 
 3. Accéder au projet :
 
-| Service | URL | TODO remplacer si nécessaire |
-|---------|-----|------------------------------|
-| Frontend | http://localhost:5173 | |
-| API | http://localhost:3000/api | |
+| Service | URL |
+|---------|-----|
+| Frontend | http://localhost:5173 |
+| API | http://localhost:3000/api |
 
 ---
 
