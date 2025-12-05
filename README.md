@@ -89,8 +89,21 @@ docker compose up --build
 
 | Service | URL | TODO remplacer si nécessaire |
 |---------|-----|------------------------------|
-| Frontend | http://localhost:5173 | |
-| API | http://localhost:3000/api | |
+| Frontend | http://localhost:4173 |
+| API | http://localhost:3000/api |
+
+4. Structure des conteneurs
+```
++----------------------+       +-----------------------+
+|      FRONTEND        |       |       BACKEND         |
+|   (Vite / Docker)    | <---- |  Node.js / Express    |
+|    Port 4173         |       |  Port 3000            |
++----------------------+       +-----------+-----------+
+                                          |
+                                +---------v----------+
+                                |    PostgreSQL      |  
+                                +--------------------+
+```
 
 ---
 
